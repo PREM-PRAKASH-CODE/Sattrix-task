@@ -32,6 +32,7 @@ export class SideBarComponent {
     this.openSidebar = !this.openSidebar;
   }
   logout() {
+    sessionStorage.removeItem('token');
     this.router.navigate(['login']);
   }
 }

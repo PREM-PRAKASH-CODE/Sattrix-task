@@ -33,6 +33,10 @@ export class AuthComponent {
           this.password == userFromStrorage.password
         ) {
           this.router.navigate(['/home']);
+          sessionStorage.setItem(
+            'token',
+            'eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cC'
+          );
           this.resetForm();
         } else {
           this.error = true;
