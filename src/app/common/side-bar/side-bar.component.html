@@ -1,0 +1,26 @@
+<div class="sidebar" [class.sidebar-close]="!openSidebar">
+  <div class="logo-details" style="cursor: pointer;" (click)="onShowHide()">
+    <div class="logo">Sattrix</div>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li *ngFor="let item of menuSidebar" #itemEl routerLinkActive="active">
+      <div class="dropdown-title">
+        <a [routerLink]="[item.link]">
+          <i [class]="item.icon"></i>
+          <span class="link_name">{{item.link_name}}</span>
+        </a>
+      </div>
+    </li>
+
+    <li>
+      <div class="dropdown-title">
+        <a (click)="logout()">
+          <i class="fa fa-logout"></i>
+
+          <span class="link_name">Logout</span>
+        </a>
+      </div>
+    </li>
+
+  </ul>
+</div>
