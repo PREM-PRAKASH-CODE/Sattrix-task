@@ -29,6 +29,9 @@
             Password is required
           </div>
         </div>
+        <div *ngIf="error" class="errorMsg">
+          Login Failed
+        </div>
 
         <button style="width: 100%;margin: 10px;" type="submit" [disabled]="!userName || !password"
           class="btn btn-primary">Login</button>

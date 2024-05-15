@@ -12,6 +12,7 @@ export class AuthComponent {
   email: string = '';
   confirmPassword = '';
   isShowLogin = true;
+  error = false;
   constructor(private router: Router) {}
   onTabChange() {
     this.isShowLogin = !this.isShowLogin;
@@ -32,8 +33,13 @@ export class AuthComponent {
           this.password == userFromStrorage.password
         ) {
           this.router.navigate(['/home']);
+          this.resetForm();
+        } else {
+          this.error = true;
+          setTimeout(() => {
+            this.error = false;
+          }, 3000);
         }
-        this.resetForm();
       }
     }
   }
